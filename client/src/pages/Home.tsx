@@ -1,12 +1,13 @@
 import { useState, useEffect, useRef } from "react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Activity, BookOpen, Download } from "lucide-react";
+import { Activity, BookOpen, Download, Play } from "lucide-react";
 import FrequencyDisplay from "@/components/FrequencyDisplay";
 import WaveformChart from "@/components/WaveformChart";
 import SpectrumChart from "@/components/SpectrumChart";
 import FrequencyTimeChart from "@/components/FrequencyTimeChart";
 import RealTimeControls from "@/components/RealTimeControls";
 import TheorySection from "@/components/TheorySection";
+import AnimationSection from "@/components/3DAnimationSection";
 import ThemeToggle from "@/components/ThemeToggle";
 import { Button } from "@/components/ui/button";
 
@@ -214,7 +215,7 @@ export default function Home() {
 
       <main className="container mx-auto px-4 py-8">
         <Tabs defaultValue="visualizer" className="w-full">
-          <TabsList className="grid w-full grid-cols-2 max-w-xl mx-auto mb-8">
+          <TabsList className="grid w-full grid-cols-3 max-w-2xl mx-auto mb-8">
             <TabsTrigger value="visualizer" data-testid="tab-visualizer">
               <Activity className="w-4 h-4 mr-2" />
               Visualizer
@@ -222,6 +223,10 @@ export default function Home() {
             <TabsTrigger value="theory" data-testid="tab-theory">
               <BookOpen className="w-4 h-4 mr-2" />
               Theory
+            </TabsTrigger>
+            <TabsTrigger value="animation" data-testid="tab-animation">
+              <Play className="w-4 h-4 mr-2" />
+              3D Animation
             </TabsTrigger>
           </TabsList>
 
@@ -273,6 +278,10 @@ export default function Home() {
 
           <TabsContent value="theory">
             <TheorySection />
+          </TabsContent>
+
+          <TabsContent value="animation">
+            <AnimationSection />
           </TabsContent>
         </Tabs>
       </main>
