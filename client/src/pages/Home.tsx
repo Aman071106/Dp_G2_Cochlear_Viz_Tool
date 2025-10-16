@@ -191,7 +191,7 @@ export default function Home() {
             <Activity className="w-8 h-8 text-primary" />
             <div>
               <h1 className="text-xl font-semibold">
-                Sound Analysis for Cochlea LED Visualizer
+                Sound Analyser
               </h1>
               <p className="text-xs text-muted-foreground">
                 Auditory Theory Educational Tool
